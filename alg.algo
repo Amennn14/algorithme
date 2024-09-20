@@ -1,0 +1,31 @@
+
+ALGORITHM words
+VAR
+    
+    length:integer:= 0
+    wordCount:integer:= 0
+    vowelCount:iteger:= 0
+    vowels:char:= {'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'}
+    previousChar:char:= ' '
+
+    sentence:string:= ReadSentence()
+BEGIN
+       For i = 0 to Length(sentence) - 1 do
+        var char = sentence[i]
+
+        length = length + 1
+
+        If char ∈ vowels then
+            vowelCount = vowelCount + 1
+        End If
+
+        If char = ' ' and previousChar ≠ ' ' then
+            wordCount = wordCount + 1
+        End If
+
+        previousChar = char
+    End For
+
+    wordCount = wordCount + 1
+
+END
